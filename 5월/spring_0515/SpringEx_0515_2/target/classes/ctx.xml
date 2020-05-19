@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="mem1" class="com.javalec.ex.Member">
+
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="유관순"></constructor-arg>
+		<constructor-arg value="20"></constructor-arg>
+		<constructor-arg value="여성"></constructor-arg>
+		<constructor-arg value="02-1111-1111"></constructor-arg>
+		<constructor-arg value="서울특별시 금천구 가산동"></constructor-arg>
+
+	</bean>
+
+
+	<bean id="mem2" class="com.javalec.ex.Member">
+
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="홍길동"></constructor-arg>
+		<constructor-arg value="25"></constructor-arg>
+		<constructor-arg value="남성"></constructor-arg>
+		<constructor-arg value="02-2222-2222"></constructor-arg>
+		<constructor-arg value="서울특별시 구로구 온수동"></constructor-arg>
+
+	</bean>
+
+
+	<bean id="mem_re1" class="com.javalec.ex.MedicalRecord">
+
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="2020-05-15"></constructor-arg>
+		<constructor-arg value="담당의사 : 한석규"></constructor-arg>
+		<constructor-arg value="담당간호사 : 이선경"></constructor-arg>
+		<constructor-arg value="경미한 감기 증상 치료"></constructor-arg>
+		<constructor-arg value="2020-05-22 예약"></constructor-arg>
+
+	</bean>
+
+
+	<bean id="mem_re2" class="com.javalec.ex.MedicalRecord">
+
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="2020-05-15"></constructor-arg>
+		<constructor-arg value="담당의사 : 한석규"></constructor-arg>
+		<constructor-arg value="담당간호사 : 이선경"></constructor-arg>
+		<constructor-arg value="두통 , 피로 치료"></constructor-arg>
+		<constructor-arg value="2020-05-20 예약"></constructor-arg>
+
+	</bean>
+
+
+
+
+	<bean id="mem_all" class="com.javalec.ex.MemberAll">
+		<property name="list">
+			<list>
+				<ref bean="mem1"></ref>
+				<ref bean="mem2"></ref>
+			</list>
+		</property>
+	</bean>
+
+
+
+</beans>
