@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+     <!-- 생성자를 통한 주입 // -->
+
+
+
+     <!-- bean id 첫글자는 소문자 -->
+	<bean id="student" class="com.javalec.ex.Student">
+
+		<constructor-arg value="홍길동"></constructor-arg>
+		<constructor-arg value="12세"></constructor-arg>
+		<constructor-arg value="5학년"></constructor-arg>
+		<constructor-arg value="2반"></constructor-arg>
+
+	</bean>
+
+
+    <!--  ctx.getBean("student2",Student.class); -->
+
+	<bean id="student2" class="com.javalec.ex.Student">
+
+		<constructor-arg value="김유신" />
+		<constructor-arg value="13세" />
+		<constructor-arg value="6학년" />
+		<constructor-arg value="1반" />
+		
+	</bean>
+
+
+    <!--  ctx.getBean("studentinfo",StudentInfo.class); -->
+
+	<bean id="studentinfo" class="com.javalec.ex.StudentInfo">
+		<constructor-arg>
+			<ref bean="student"></ref>
+		</constructor-arg>
+	</bean>
+	
+	
+	
+
+
+    <!--  setter //
+
+	<bean id="student" class="com.javalec.ex.Student">
+
+		<property name="name" value="홍길동"></property>
+		<property name="age" value="12세"></property>
+		<property name="gradeNum" value="5학년"></property>
+		<property name="classNum" value="5반"></property>
+
+	</bean> 
+	
+	-->
+
+
+
+    <!--  
+	
+	<bean id="studentinfo" class="com.javalec.ex.StudentInfo">
+	
+	<property name="student">
+	<ref bean="student"></ref>
+	</property>
+	
+	</bean> 
+	
+	-->
+	
+
+
+
+
+</beans>
