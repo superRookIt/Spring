@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<bean id="log" class="com.javalec.ex.Aop"></bean>
+
+
+
+
+	<bean id="book" class="com.javalec.ex.Book">
+		<property name="author" value="조앤"></property>
+		<property name="kind" value="소설"></property>
+		<property name="num" value="10"></property>
+		<property name="title" value="해리포터"></property>
+	</bean>
+
+
+	<bean id="rental" class="com.javalec.ex.Rental">
+		<property name="back" value="2020-06-1"></property>
+		<property name="book" value="해리포터"></property>
+		<property name="name" value="김수한"></property>
+		<property name="num" value="10"></property>
+		<property name="tel" value="02-2222-2222"></property>
+	</bean>
+
+
+
+
+
+
+
+</beans>
