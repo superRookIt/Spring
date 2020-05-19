@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+
+	<bean id="aop" class="com.javalec.ex.Aop"></bean>
+
+
+	<aop:config> <!-- ref는 bean의 id  -->
+		<aop:aspect id="random" ref="aop"> <!-- aspect id는 다른데 사용할 일이 없음 -->
+			<aop:pointcut expression="within(com.javalec.ex.*)" id="common" />
+			<aop:around method="logger" pointcut-ref="common" /> 
+		</aop:aspect>
+	</aop:config>
+
+
+
+	<bean id="book" class="com.javalec.ex.BookLoan">
+		<property name="hak" value="1"></property>
+		<property name="book" value="b01"></property>
+		<property name="title" value="해리포터"></property>
+		<property name="kind" value="소설"></property>
+		<property name="start_date" value="1월 1일"></property>
+		<property name="end_date" value="2월 1일"></property>
+		<property name="overdue" value="없음"></property>
+	</bean>
+
+
+
+	<bean id="score" class="com.javalec.ex.StudentScore">
+
+		<property name="hak" value="1"></property>
+		<property name="kor" value="100"></property>
+		<property name="eng" value="100"></property>
+		<property name="math" value="100"></property>
+		<property name="total" value="300"></property>
+		<property name="avg" value="100"></property>
+	</bean>
+
+
+
+
+	<bean id="info" class="com.javalec.ex.StudentInfo">
+
+		<property name="hak" value="1"></property>
+		<property name="name" value="홍길동"></property>
+		<property name="grade" value="컴퓨터학과"></property>
+		<property name="address" value="서울시 금천구 가산동"></property>
+		<property name="tel" value="02-2222-2222"></property>
+
+	</bean>
+
+
+
+</beans>
