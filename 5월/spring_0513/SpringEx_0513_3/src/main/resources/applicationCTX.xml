@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calculator" class="com.javalec.ex.Calculator"></bean>
+
+
+    <!-- new Temperature() // 객체 이미 만들어짐 (새롭게 만드는거 아님) -->
+	<bean id="temperature" class="com.javalec.ex.Temperature">
+
+		<property name="nav" value="미국"></property>
+		<property name="temp" value="50"></property>
+		<property name="cal">
+			<ref bean="calculator"></ref>
+		</property>
+
+	</bean>
+
+</beans>
