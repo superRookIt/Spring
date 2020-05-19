@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd"
+	profile="mobile">
+
+
+	<bean id="browser" class="com.javalec.ex.Browser">
+		<property name="brow" value="안드로이드"></property>
+		<property name="ip" value="211.108.107.3"></property>
+		<property name="con" value="모바일 접속"></property>
+	</bean>
+
+
+</beans>
