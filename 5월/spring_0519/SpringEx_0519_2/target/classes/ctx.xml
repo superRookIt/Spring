@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="aop" class="com.javalec.ex.Aop"></bean>
+
+
+	<aop:config>
+
+		<aop:aspect id="around" ref="aop">
+			<aop:pointcut expression="within(com.javalec.ex.Notice)" id="around" />
+			<aop:around pointcut-ref="around" method="logger"></aop:around>
+		</aop:aspect>
+
+
+		<aop:aspect id="before" ref="aop">
+			<aop:pointcut expression="within(com.javalec.ex.Join)" id="before" />
+			<aop:before pointcut-ref="before" method="before" />
+		</aop:aspect>
+		
+		<aop:aspect id="after" ref="aop">
+			<aop:pointcut expression="within(com.javalec.ex.Event)" id="after" />
+			<aop:after pointcut-ref="after" method="after" />
+		</aop:aspect>
+
+	</aop:config>
+
+
+
+	<bean id="event" class="com.javalec.ex.Event">
+
+		<property name="num" value="1"></property>
+		<property name="title" value="이벤트 시작"></property>
+		<property name="s_date" value="2020-05-01"></property>
+		<property name="e_date" value="2020-06-01"></property>
+
+	</bean>
+
+
+
+	<bean id="join" class="com.javalec.ex.Join">
+
+		<property name="m_num" value="1"></property>
+		<property name="id" value="admin"></property>
+		<property name="pw" value="1234"></property>
+		<property name="name" value="홍길동"></property>
+		<property name="j_date" value="2020-05-01"></property>
+
+	</bean>
+
+
+
+	<bean id="notice" class="com.javalec.ex.Notice">
+
+		<property name="num" value="1"></property>
+		<property name="title" value="공지사항"></property>
+		<property name="context" value="조심하세요"></property>
+		<property name="date" value="2020-06-01"></property>
+		<property name="writer" value="장길산"></property>
+
+	</bean>
+
+
+
+
+
+
+
+
+
+
+</beans>
