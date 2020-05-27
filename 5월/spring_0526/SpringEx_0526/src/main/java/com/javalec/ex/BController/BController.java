@@ -25,8 +25,8 @@ public class BController {
 	
 	JdbcTemplate template;
 
-	
-	@Autowired // servlet에서 
+	 
+	@Autowired // servlet에서 가져옴 
 	public void setTemplate(JdbcTemplate template) {
 		
 		this.template = template;
