@@ -48,7 +48,7 @@ public class BController {
 	
 	@RequestMapping("list")
 	public String list(Model model) {
-		
+		//mybatis에 있는 객체를 가져 옴
 		bcom = new BListCommand();
 		
 		bcom.execute(model);
@@ -169,13 +169,6 @@ public class BController {
 	}
 
 	
-	
 
-	
-	
-	
-	
-	
-	
 
 }
