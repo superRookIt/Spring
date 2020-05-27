@@ -25,6 +25,12 @@ public class BController {
 	
 	JdbcTemplate template;
 
+	
+	@Autowired
+	private SqlSession sqlsession;
+	
+	//Autowired 1 변수, 2 setter, 3 생성자
+	
 	 
 	@Autowired // servlet에서 가져옴 
 	public void setTemplate(JdbcTemplate template) {
